@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Image to PDF Converter</title>
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-lock"></i> Secure Image to PDF Generator ❤️</h1>
+      <p class="tagline">Convert your images to PDFs with complete privacy. All processing happens in your browser -
+        your files never leave your device.</p>
+      <div class="privacy-badge">
+        <i class="fas fa-shield-alt"></i>
+        <span>100% Private • No Server Uploads • Free Forever</span>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="upload-section">
+        <div class="upload-area" id="drop-zone">
+          <div class="upload-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <h3 class="upload-text">Drag & Drop Images Here</h3>
+          <p class="upload-subtext">or click to browse files (JPG, PNG, etc.)</p>
+          <input type="file" id="file-input" accept="image/*" multiple />
+        </div>
+
+        <div class="image-grid-container">
+          <ul id="image-grid" class="image-grid">
+            <li class="empty-state">
+              <i class="fas fa-images"></i>
+              <p>Upload your images to begin</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="action-buttons">
+          <button id="clear-btn" class="btn btn-secondary">
+            <i class="fas fa-trash-alt"></i>
+            <span>Clear All</span>
+          </button>
+          <button id="convert-btn" class="btn" disabled>
+            <i class="fas fa-file-pdf"></i>
+            <span>Convert to PDF</span>
+          </button>
+        </div>
+
+        <div id="status" class="status"></div>
+      </div>
+
+      <div class="info-section">
+        <h2 class="section-title"><i class="fas fa-book-open"></i> How to Use</h2>
+
+        <div class="info-card">
+          <h3><i class="fas fa-upload"></i> Upload Images</h3>
+          <ul>
+            <li>Drag & drop images or click to browse</li>
+            <li>Supports JPG, PNG, BMP, and TIFF formats</li>
+            <li>Upload multiple images at once</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3><i class="fas fa-sort"></i> Arrange & Organize</h3>
+          <ul>
+            <li>Drag thumbnails to rearrange image order</li>
+            <li>Hover over images to see details</li>
+            <li>Remove unwanted images with the delete button</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3><i class="fas fa-file-download"></i> Convert & Download</h3>
+          <ul>
+            <li>Click "Convert to PDF" to generate your document</li>
+            <li>Download will start automatically</li>
+            <li>PDF preserves original image quality</li>
+          </ul>
+        </div>
+
+        <h2 class="section-title"><i class="fas fa-user-shield"></i> Privacy & Security</h2>
+
+        <div class="info-card">
+          <h3><i class="fas fa-lock"></i> Your Privacy Protected</h3>
+          <ul>
+            <li>All processing happens in your browser</li>
+            <li>Your images never leave your computer</li>
+            <li>No server uploads - your files stay private</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3><i class="fas fa-infinity"></i> 100% Free Forever</h3>
+          <ul>
+            <li>No hidden costs or subscriptions</li>
+            <li>No watermarks on your PDFs</li>
+            <li>Unlimited conversions</li>
+          </ul>
+        </div>
+
+        <div class="share-section">
+          <div class="share-btn" onclick="shareTool()">
+            <i class="fas fa-bookmark"></i>
+            <span>Bookmark this page</span>
+          </div>
+          <div class="share-btn" onclick="copyLink()">
+            <i class="fas fa-share-alt"></i>
+            <span>Share with friends</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© <span id="year"></span> Secure Image to PDF Converter | All processing happens in your browser - no data is
+        sent to any server</p>
+      <p>Created with ❤️ by <a href="https://www.linkedin.com/in/zahidensari/" target="_blank">Zahid Ansari</a></p>
+    </div>
+  </div>
+
+  <script src="main.min.js"></script>
+</body>
+
+</html>

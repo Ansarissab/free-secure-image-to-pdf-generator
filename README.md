@@ -53,7 +53,7 @@ open index.html  # On macOS
 start index.html # On Windows
 ```
 
-Or [use the live demo](https://your-demo-link.com) (coming soon)
+Or [use the live demo](https://ansarissab.github.io/free-secure-image-to-pdf-generator/) (coming soon)
 
 ## Development
 
